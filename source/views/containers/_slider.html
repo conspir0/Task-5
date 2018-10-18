@@ -1,0 +1,69 @@
+<% var slider = [
+{ "min":"30", "max":"150", "value": [30,50], "name":"area", "title":"Powierzchnia (m2)"},
+{ "min":"100000", "max":"500000", "value": [100000,300000], "name":"price", "title":"Zakres cenowy (zł)"},
+{ "min":"1", "max":"5", "value": [1,3], "name":"rooms", "title":"Ilość pomieszczeń"}
+] %>
+
+
+<!--  WIDGET - slider  -->
+<section class="content">
+   
+    <!--  WIDGET - wrapper  -->
+    <div class="content__wrapper">
+    
+        <!--  WIDGET - grid  -->
+        <div class="content__grid">
+        
+            <!--  WIDGET - header  -->
+            <header class="header">
+                <p class="header__title">Wybierz parametry wyszukiwania</p>
+                <div class="header__line"></div>
+            
+            <!--  WIDGET - header end  -->
+            </header>
+            
+            <!--  WIDGET - main box  -->
+            <div class="slider__box">
+                
+                
+                <!--  Each box  -->
+                <% for(var i=0; i < slider.length; i++) { %>
+                <div class="simple__box">
+                
+                    <!--  WIDGET - title  -->
+                    <p class="slider-title"><%= slider[i].title %></p>
+                    
+                    <!--  WIDGET - slider  -->
+                    <div class="slider-range" data-min="<%= slider[i].min %>" data-max="<%= slider[i].max%>" data-value1="<%= slider[i].value[0] %>" data-value2="<%= slider[i].value[1] %>"></div>
+                    
+                    <!--  WIDGET - slider value  -->
+                    <div class="slider-value">
+                        <p class="value value-min"><%= slider[i].value[0] %></p>
+                        <p class="value value-max"><%= slider[i].value[1] %></p>
+                        
+                    <!--  WIDGET - slider value end  -->
+                    </div>
+                </div>
+                    
+                <!--  Each box end  -->
+                <% } %>
+
+            <!--  WIDGET - main box end  -->
+            </div>
+            
+            <!--  WIDGET - slider option  -->
+            <div class="slider__option">
+                <label for="" class="dot__text">
+                    <input class="dot" type="checkbox" checked="checked" name="avalibe">Wolne (24)
+                    <span class="checkmark"></span>
+                </label>
+                <label for="" class="dot__text">
+                    <input class="dot" type="checkbox" name="sales">Promocje (09)
+                    <span class="checkmark"></span>
+                </label>
+               
+            <!--  WIDGET - slider option end  -->
+            </div>
+        </div>
+    </div>
+</section>

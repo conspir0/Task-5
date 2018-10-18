@@ -1,0 +1,20 @@
+
+<% var slider = [
+{ "min":"0", "max":"100", "value": ["1", "70"], "name":"area", "title":"Powierzchnia (m<sup>2</sup>)"},
+{ "min":"0", "max":"50", "value": ["1", "100"], "name":"price", "title":"Zakres cenowy (zł)"},
+{ "min":"0", "max":"150", "value": ["1", "50"], "name":"rooms", "title":"Ilość pomieszczeń"}
+] %>
+
+<ul>
+    <% for(var i=0; i < slider.length;
+    i++) { %>
+        <li>
+            <p class="box__title"><%= slider[i].title %></p>
+            <%= slider[i].name %>
+            <div class="box__value">
+                <p class=""><%= slider[i].value[0] %></p>
+                <p class=""><%= slider[i].value[1] %></p>
+            </div>
+        </li>
+    <% } %>
+</ul>

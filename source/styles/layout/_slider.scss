@@ -1,0 +1,149 @@
+.content {
+    background: white;
+    padding: 92px 0 85px;
+    
+    &__wrapper {
+        margin: 0 10%;
+    }
+    &__grid {
+        display: grid;
+        grid-template-columns: 1fr;
+        grid-template-rows: auto;
+        grid-template-areas:
+            'title'
+            'slider'
+            'option';        
+    }
+}
+
+.header {
+    grid-area: title;
+    position: relative;
+    line-height: 36px;
+    
+    &__title {
+        font-size: 36px;
+        font-weight: 500;
+        color: $second-color;
+    }
+    &__line {
+        position: absolute;
+        top: 10px;
+        left: -210px;
+        width: 150px;
+        height: 12px;
+        background-color: $second-color;
+    }
+}
+
+.slider__box {
+    grid-area: slider;
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    grid-template-rows: auto;
+    grid-template-areas: 'area price rooms';
+    grid-gap: 0 50px;   
+    
+}
+
+.simple__box {
+    width: 100%;
+}
+
+.slider-title {
+    text-align: left;
+    margin: 64px 0 20px;
+}
+
+.slider-range.ui-slider.ui-corner-all.ui-slider-horizontal.ui-widget.ui-widget-content {
+    background-color: $third-color;
+    border-radius: 0;
+    border: 0;
+    height: 6px;
+    width: 100%;
+    
+    .ui-slider-range {
+        background-color: $second-color;
+        border-radius: 0;
+    }
+    .ui-slider-handle.ui-corner-all.ui-state-default {
+        background-color: $second-color;
+        width: 17px;
+        height: 17px;
+        border: 0;
+        border-radius: 50%;
+        top: 0;
+        bottom: 0;
+        margin: auto 0;
+        
+    }
+}
+
+.slider-value {
+    display: flex;
+    justify-content: space-between;
+    margin-top: 20px;
+}
+
+.slider__option {
+    grid-area: option;
+    display: flex;
+    margin-top: 65px;
+    
+    .option {
+        display: flex;
+    }
+    
+    .option:nth-child(2) {
+        margin-left: 80px;
+    }
+}
+
+.dot__text {
+    display: block;
+    position: relative;
+    padding-left: 30px;
+    cursor: pointer;
+    line-height: 24px;
+    user-select: none;
+    
+    .dot {
+        position: absolute;
+        opacity: 0;
+        cursor: pointer;
+        top: 0;
+        left: 0;
+        width: 24px;
+        height: 24px;
+    }
+}
+
+.dot__text:nth-child(2) {
+    margin-left: 80px;
+}
+
+.checkmark {
+    position: absolute;
+    top: 0;
+    left: 0;
+    height: 20px;
+    width: 20px;
+    border: 2px solid $second-color;
+    border-radius: 50%;
+    pointer-events: none;
+    transition: all .3s ease-in-out;
+}
+
+.dot__text .dot:checked ~ .checkmark {
+    background-color: $second-color;
+}
+
+.checkmark:after {
+    content: "";
+    position: absolute;
+    display: none;
+}
+
+.dot__text .dot:checked ~ .checkmark:after {
+    display: block;
+}
